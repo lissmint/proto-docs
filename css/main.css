@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@500&family=Montserrat&display=swap");
+
+:root {
+  --accent-font: "Jura", sans-serif;
+  --main-font: "Montserrat", sans-serif;
+  --accent: #008080;
+}
+/* SIDEBAR */
+a.w3-bar-item,
+button.w3-button {
+  color: var(--accent) !important;
+  font-family: var(--accent-font) !important;
+  font-size: 1.5rem;
+}
+w3-card {
+  margin-top: 2rem;
+}
+.sidebar-content {
+  margin-top: 2rem;
+}
+/* MAIN */
+main {
+  margin-left: 20%;
+  font-family: var(--main-font);
+}
+main ul {
+  list-style-type: circle;
+}
+
+main .content {
+  padding: 0 2rem;
+}
+main a {
+  text-decoration: underline;
+  color: var(--accent);
+  transition: 0.2s;
+}
+
+main a:hover {
+  font-weight: bold;
+}
+
+h1 {
+  font-family: var(--accent-font);
+  margin: 2rem 0;
+}
+
+h1 .section {
+  color: var(--accent);
+}
+
+h2 {
+  font-family: var(--accent-font);
+  color: var(--accent);
+}
+
+p {
+  text-align: justify;
+}
+
+pre {
+  border-radius: 10px;
+}
+
+.accent {
+  color: var(--accent);
+}

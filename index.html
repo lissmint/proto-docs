@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NI Prototypes Docs</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/prism.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div
+      class="w3-sidebar w3-bar-block w3-light-grey w3-card"
+      style="width: 20%;"
+    >
+      <div class="sidebar-content">
+        <a href="#intro" class="w3-bar-item w3-button">1. Начало работы</a>
+        <a href="#add-to-existing" class="w3-bar-item w3-button"
+          >2. Добавление сервиса к существующей группе сервисов</a
+        >
+        <div class="w3-dropdown-hover">
+          <button class="w3-button">
+            Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+          </div>
+        </div>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      </div>
+    </div>
+
+    <main class="w3-container">
+      <div id="intro">
+        <h1><span class="section">&#167;</span> Начало работы</h1>
+        <div class="content">
+          <p>
+            Фронтенд NI Prototypes реализован с помощью использования технологий
+            Vue.js, Vue Router и Vuex. Со всей необходимой информацией по
+            фреймворку можно ознакомиться в соответствующих документациях:
+          </p>
+          <ul>
+            <li>
+              <a href="https://ru.vuejs.org/v2/guide/index.html">Vue.js</a>
+            </li>
+            <li><a href="https://router.vuejs.org/ru/">Vue Router</a></li>
+            <li><a href="https://vuex.vuejs.org/ru/guide/">Vuex</a></li>
+          </ul>
+          <h2>Vue CLI</h2>
+          <h3>Установка</h3>
+          <p>
+            Для установки
+            <a href="https://cli.vuejs.org/guide/installation.html">Vue CLI</a>
+            необходимо наличие Node.js версии 8.9+
+          </p>
+          <pre><code class="language-bash">npm install -g @vue/cli</code></pre>
+          <h3>Установка зависимостей</h3>
+          <pre><code class="language-bash">npm install</code></pre>
+          <h3>Скрипты</h3>
+          <p>Компилирует и реагирует на изменения в разработке</p>
+          <pre><code class="language-bash">npm run serve</code></pre>
+          <p>Компилирует и уменьшает для последующего деплоя</p>
+          <pre><code class="language-bash">npm run build</code></pre>
+        </div>
+      </div>
+
+      <div id="add-to-existing">
+        <h1>
+          <span class="section">&#167;</span> Добавление сервиса к существующей
+          группе сервисов
+        </h1>
+        <div class="content">
+          <p>
+            Чтобы добавить новый сервис к уже существующей группе сервисов,
+            необходимо добавить его в список сервисов (<span class="accent"
+              >./src/assets/serviceList.js</span
+            >), используя следующий шаблон:
+          </p>
+          <pre><code class="language-js">export default [
+  // ...
+  {
+    title: 'Tacotron 2.1', // имя сервиса в навигации
+    familyName: 'tts', // название группы сервисов
+    active: false, // статус WebSocket-а
+    tags: ['EN', 'LJ'], // теги сервиса в навигации
+    url: 't2w',
+    ws: null, // WebSocket объект, назначается при запуске приложения
+    options: {
+      // Параметры необходимые для работы компонентов на странице сервиса
+    }
+  },
+  // ...
+]</code></pre>
+          <h2>Существующие группы сервисов</h2>
+          <ul>
+            <li>tts</li>
+            <li>asr</li>
+            <li>qa</li>
+            <li>nmt</li>
+            <li>mig</li>
+            <li>mlm</li>
+            <li>semsim</li>
+            <li>spp</li>
+            <li>tg</li>
+          </ul>
+          <h2>О поле options</h2>
+          <p>
+            В поле <span class="accent">options</span> сервиса хранятся данные,
+            необходимые для корректной работы компонентов на странице сервиса. В
+            случае добавления сервиса, принадлежащего уже имеющейся группе
+            сервисов, при заполнении поля
+            <span class="accent">options</span> следует посмотреть на параметры,
+            которые используют сервисы из этой группы.
+          </p>
+          <h3>TTS</h3>
+          <ul>
+            <li>
+              <span class="accent">maxLength</span> &larr; максимальная длина
+              текста, используется в поле ввода
+            </li>
+          </ul>
+          <h3>ASR</h3>
+          Опций не имеется
+          <h3>QA</h3>
+          <ul>
+            <li>
+              <span class="accent">maxLength</span> &larr; максимальная длина
+              фрагмента текста, используется в поле ввода фрагмента
+            </li>
+            <li>
+              <span class="accent">questionMaxLength</span> &larr; максимальная
+              длина вопроса, используется в поле ввода вопроса
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>
