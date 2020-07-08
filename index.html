@@ -4,85 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NI Prototypes Docs</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="stylesheet" href="css/prism.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <div
-      class="w3-sidebar w3-bar-block w3-light-grey w3-card"
-      style="width: 20%;"
-    >
-      <div class="sidebar-content">
-        <a href="#intro" class="w3-bar-item w3-button">1. Начало работы</a>
-        <a href="#add-to-existing" class="w3-bar-item w3-button"
-          >2. Добавление сервиса к существующей группе сервисов</a
-        >
-        <div class="w3-dropdown-hover">
-          <button class="w3-button">
-            Dropdown
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="w3-dropdown-content w3-bar-block">
-            <a href="#" class="w3-bar-item w3-button">Link</a>
-            <a href="#" class="w3-bar-item w3-button">Link</a>
-          </div>
+    <div class="wrapper">
+      <div class="nav">
+        <div class="nav-burger">
+          <span> </span>
         </div>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
-      </div>
-    </div>
-
-    <main class="w3-container">
-      <div id="intro">
-        <h1><span class="section">&#167;</span> Начало работы</h1>
-        <div class="content">
-          <p>
-            Фронтенд NI Prototypes реализован с помощью использования технологий
-            Vue.js, Vue Router и Vuex. Со всей необходимой информацией по
-            фреймворку можно ознакомиться в соответствующих документациях:
-          </p>
-          <ul>
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#intro" class="nav-link">1. Начало работы</a></li>
             <li>
-              <a href="https://ru.vuejs.org/v2/guide/index.html">Vue.js</a>
+              <a href="#add-to-existing" class="nav-link"
+                >2. Добавление сервиса к существующей группе сервисов</a
+              >
             </li>
-            <li><a href="https://router.vuejs.org/ru/">Vue Router</a></li>
-            <li><a href="https://vuex.vuejs.org/ru/guide/">Vuex</a></li>
+            <li>
+              <a href="#add-new" class="nav-link"
+                >3. Добавление новой группы сервисов</a
+              >
+            </li>
+            <li><a href="#edit-functionality" class="nav-link">4. Добавление и изменение функционала</a></li>
+            <li><a href="#mixin" class="nav-link">5. Миксин</a></li>
+            <li><a href="#components" class="nav-link">6. Компоненты</a></li>
           </ul>
-          <h2>Vue CLI</h2>
-          <h3>Установка</h3>
-          <p>
-            Для установки
-            <a href="https://cli.vuejs.org/guide/installation.html">Vue CLI</a>
-            необходимо наличие Node.js версии 8.9+
-          </p>
-          <pre><code class="language-bash">npm install -g @vue/cli</code></pre>
-          <h3>Установка зависимостей</h3>
-          <pre><code class="language-bash">npm install</code></pre>
-          <h3>Скрипты</h3>
-          <p>Компилирует и реагирует на изменения в разработке</p>
-          <pre><code class="language-bash">npm run serve</code></pre>
-          <p>Компилирует и уменьшает для последующего деплоя</p>
-          <pre><code class="language-bash">npm run build</code></pre>
-        </div>
+        </nav>
       </div>
 
-      <div id="add-to-existing">
-        <h1>
-          <span class="section">&#167;</span> Добавление сервиса к существующей
-          группе сервисов
-        </h1>
+      <div class="container">
         <div class="content">
-          <p>
-            Чтобы добавить новый сервис к уже существующей группе сервисов,
-            необходимо добавить его в список сервисов (<span class="accent"
-              >./src/assets/serviceList.js</span
-            >), используя следующий шаблон:
-          </p>
-          <pre><code class="language-js">export default [
+          <section id="intro">
+            <h1 class="content-ttl">Начало работы</h1>
+            <p>
+              Фронтенд NI Prototypes реализован с помощью использования
+              технологий Vue.js, Vue Router и Vuex. Со всей необходимой
+              информацией по фреймворку можно ознакомиться в соответствующих
+              документациях:
+            </p>
+            <ul>
+              <li>
+                <a href="https://ru.vuejs.org/v2/guide/index.html" target="_blank">Vue.js</a>
+              </li>
+              <li><a href="https://router.vuejs.org/ru/" target="_blank">Vue Router</a></li>
+              <li><a href="https://vuex.vuejs.org/ru/guide/" target="_blank">Vuex</a></li>
+            </ul>
+            <h2>Vue CLI</h2>
+            <h3>Установка</h3>
+            <p>
+              Для установки
+              <a href="https://cli.vuejs.org/guide/installation.html" target="_blank">Vue CLI</a>
+              необходимо наличие Node.js версии 8.9+
+            </p>
+            <pre><code class="language-bash">npm install -g @vue/cli</code></pre>
+            <h3>Установка зависимостей</h3>
+            <pre><code class="language-bash">npm install</code></pre>
+            <h3>Скрипты</h3>
+            <p>Компилирует и реагирует на изменения в разработке</p>
+            <pre><code class="language-bash">npm run serve</code></pre>
+            <p>Компилирует и уменьшает для последующего деплоя</p>
+            <pre><code class="language-bash">npm run build</code></pre>
+          </section>
+
+          <section id="add-to-existing">
+            <h1 class="content-ttl">
+              Добавление сервиса к существующей
+              группе сервисов
+            </h1>
+              <p>
+                Чтобы добавить новый сервис к уже существующей группе сервисов,
+                необходимо добавить его в список сервисов (<i
+                  >./src/assets/serviceList.js</i
+                >), используя следующий шаблон:
+              </p>
+              <pre><code class="language-js">export default [
   // ...
   {
     title: 'Tacotron 2.1', // имя сервиса в навигации
@@ -96,52 +92,202 @@
     }
   },
   // ...
-]</code></pre>
-          <h2>Существующие группы сервисов</h2>
-          <ul>
-            <li>tts</li>
-            <li>asr</li>
-            <li>qa</li>
-            <li>nmt</li>
-            <li>mig</li>
-            <li>mlm</li>
-            <li>semsim</li>
-            <li>spp</li>
-            <li>tg</li>
-          </ul>
-          <h2>О поле options</h2>
-          <p>
-            В поле <span class="accent">options</span> сервиса хранятся данные,
-            необходимые для корректной работы компонентов на странице сервиса. В
-            случае добавления сервиса, принадлежащего уже имеющейся группе
-            сервисов, при заполнении поля
-            <span class="accent">options</span> следует посмотреть на параметры,
-            которые используют сервисы из этой группы.
-          </p>
-          <h3>TTS</h3>
-          <ul>
-            <li>
-              <span class="accent">maxLength</span> &larr; максимальная длина
-              текста, используется в поле ввода
-            </li>
-          </ul>
-          <h3>ASR</h3>
-          Опций не имеется
-          <h3>QA</h3>
-          <ul>
-            <li>
-              <span class="accent">maxLength</span> &larr; максимальная длина
-              фрагмента текста, используется в поле ввода фрагмента
-            </li>
-            <li>
-              <span class="accent">questionMaxLength</span> &larr; максимальная
-              длина вопроса, используется в поле ввода вопроса
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
+</code></pre>
+              <h2>Существующие группы сервисов</h2>
+              <ul>
+                <li>tts</li>
+                <li>asr</li>
+                <li>qa</li>
+                <li>nmt</li>
+                <li>mig</li>
+                <li>mlm</li>
+                <li>semsim</li>
+                <li>spp</li>
+                <li>tg</li>
+              </ul>
+              <h2>О поле options</h2>
+              <p>
+                В поле <span class="accent">options</span> сервиса хранятся данные,
+                необходимые для корректной работы компонентов на странице сервиса. В
+                случае добавления сервиса, принадлежащего уже имеющейся группе
+                сервисов, при заполнении поля
+                <span class="accent">options</span> следует применять параметры,
+                используемые сервисами из этой группы.
+              </p>
+              <!-- <h3>TTS</h3>
+              <ul>
+                <li>
+                  <span class="accent">maxLength</span> &larr; максимальная длина
+                  текста, используется в поле ввода
+                </li>
+              </ul>
+              <h3>ASR</h3>
+              Опций не имеется
+              <h3>QA</h3>
+              <ul>
+                <li>
+                  <span class="accent">maxLength</span> &larr; максимальная длина
+                  фрагмента текста, используется в поле ввода фрагмента
+                </li>
+                <li>
+                  <span class="accent">questionMaxLength</span> &larr; максимальная
+                  длина вопроса, используется в поле ввода вопроса
+                </li>
+              </ul> -->
+        </section>
 
+        <section id="add-new">
+          <h1 id="add-new" class="content-ttl">
+            Добавление новой группы сервисов
+          </h1>
+          <p>
+            Для добавления новой группы сервисов, необходимо выполнить следующие шаги:
+          </p>
+          <ol>
+            <li>Создать компонент-отображение в <i>./src/views/</i>, используя следующий шаблон:
+            <pre><code class="language-markup"">&lt;template&gt;
+  &lt;div&gt;
+  &lt;!-- ШАПКА --&gt;
+    &lt;AppHeader :title="service.title" />
+
+    &lt;div class="w3-container model" v-if="!service.active">
+      &lt;h2>
+        {{ service.title }} is currently unavailable. Please check in later.
+      &lt;/h2>
+    &lt;/div>
+    &lt;!-- ОСНОВНОЙ КОНТЕЙНЕР -->
+    &lt;div class="w3-container model" v-else>
+      &lt;h2>Input context, question and Run</h2>
+      &lt;!-- ЗДЕСЬ НЕОБХОДИМЫЕ ЭЛЕМЕНТЫ ВВОДА -->
+
+      &lt;RunBtn
+        :disabled="
+          isRunning || !question || !fragment /* условия отключения кнопки */
+        "
+        :isRunning="isRunning"
+        @run="sendData"
+      />
+
+      &lt;!-- ВЫВОД РЕЗУЛЬТАТА -->
+      &lt;Result :receivedData="receivedData" v-if="result">
+        &lt;template #main>
+          &lt;!-- СОДЕРЖАНИЕ ТЕЛА РЕЗУЛЬТАТА -->
+        &lt;/template>
+        &lt;template #footer>
+          &lt;!-- ИНФОРМАЦИЯ В ФУТЕРЕ -->
+        &lt;/template>
+      &lt;/Result>
+    &lt;/div>
+
+    &lt;Error :msg="receivedData.msg" v-if="error && !isRunning" />
+  &lt;/div>
+&lt;/template></code></pre>
+
+        <pre><code class="language-html">&lt;script>
+  import servicePage from '@/mixins/servicePage.mixin'
+  
+  export default {
+    name: 'qa-page',
+    mixins: [servicePage],
+    data: () => ({
+      // данные страницы
+      fragment: '',
+      question: ''
+    }),
+    computed: {
+      // формируем объект userData
+      userData() {
+        return {
+          event: this.service.url,
+          question: this.question,
+          fragment: this.fragment
+        }
+      }
+    },
+    //reset component data fields
+    beforeRouteUpdate(to, from, next) {
+      this.fragment = ''
+      this.question = ''
+      next()
+    }
+  }
+&lt;/script></code></pre></li>
+            <li>Зарегистрировать новый роут в <i>./src/router/index.js</i> ПЕРЕД роутом 404, используя следующий шаблон:
+              <pre><code class="language-js">const routes = [
+  // ...
+  {
+    path: '/family/:id',
+    name: 'family',
+    component: () => import('../views/family.vue') // импорт компонента-отображения, созданного в предыдущем шаге
+  },
+  // ...
+]</code></pre>
+            </li>
+            <li>
+              Добавить сервисы в список сервисов, согласно шаблону, предоставленному в <a href="#add-to-existing">предыдущем разделе</a> 
+            </li>
+            <li>Добавить в вычисляемые свойства компонента <i>./src/components/Sidebar</i> свойство, получающее из хранилища список активных сервисов новой группы:
+            <pre><code class="language-js">export default {
+  // ...
+  computed: {
+    // ...
+    family() {
+      return this.$store.getters.activeServices.filter(
+        serv => serv.familyName == 'family'
+      )
+    }
+  },
+  // ...
+}</code></pre>
+            </li>
+            <li>Добавить в шаблон  <i>./src/components/Sidebar</i> новую пару компонентов NavCategory и NavLinks:
+              <pre><code class="language-markup">&lt;NavCategory
+  title="Sidebar Title"
+  :available="family.length"
+  familyName="family"
+  @showModels="showModels"
+/>
+&lt;NavLinks name="family" :services="family" v-if="family.length" /></code></pre>
+            </li>
+
+          </ol>
+        </section>
+
+        <section id="edit-functionality">
+          <h1 id="add-new" class="content-ttl">
+            Добавление и изменение функционала
+          </h1>
+          <p>
+            Во всех имеющихся компонентах-отображениях, относящихся к страницам сервисов используется миксин. При необходимости добавить новый функционал, не имеющийся в миксине, следует добавить необходимые элементы в шаблон компонента-отображения и необходимый функционал в его экспортируемый объект.
+          </p>
+          <p>
+            В случае необходимости изменения функционала, использующегося в миксине, следует помнить о <a href="https://ru.vuejs.org/v2/guide/mixins.html#%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8-%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F-%D0%BE%D0%BF%D1%86%D0%B8%D0%B9" target="_blank" rel="noopener noreferrer">слиянии опций</a> .
+          </p>
+        </section>
+
+        <section id="#mixin">
+          <h1 id="add-new" class="content-ttl">
+            Миксин
+          </h1>
+          <h2>Заголовок</h2>
+          <h2>Данные</h2>
+          <h2>Вычисляемые свойста</h2>
+          <h2>Слежение</h2>
+          <h2>Методы</h2>
+          <h2>Хук роутера</h2>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      let burger = document.querySelector(".nav-burger");
+      let menu = document.querySelector(".nav-menu");
+
+      burger.addEventListener("click", function () {
+        burger.classList.toggle("active");
+        menu.classList.toggle("active");
+      });
+    </script>
     <script src="js/prism.js"></script>
   </body>
 </html>
