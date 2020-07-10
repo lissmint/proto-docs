@@ -263,4 +263,7 @@ td {
   .container {
     margin-left: 50px;
   }
+  .component {
+    max-width: 100%;
+  }
 }
