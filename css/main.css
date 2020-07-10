@@ -237,6 +237,30 @@ h3 {
   line-height: 20px;
 }
 
+.col-ttl {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.component {
+  max-width: 50%;
+}
+.component td {
+  padding: 15px;
+}
+.component td:first-child {
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+}
 @media (max-width: 767px) {
   .container {
     margin-left: 50px;

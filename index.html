@@ -306,6 +306,318 @@
           <h1 id="add-new" class="content-ttl">
             Компоненты
           </h1>
+          <h2>AppHeader</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Заголовок страницы, отображающий название выбранного сервиса</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Да</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">title</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;AppHeader :title="service.title" /></code></pre></td>
+            </tr>
+          </table>
+          <h2>Error</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Блок с сообщением об ошибке</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Да</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">msg</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;Error :msg="receivedData.msg" v-if="error && !isRunning" /></code></pre></td>
+            </tr>
+          </table>
+          <h2>Loader</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Индикатор загрузки</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Нет</td>
+            </tr>
+            <tr>
+              <td>Входные параметры</td>
+              <td colspan="2">Нет</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;Loader v-if="!loaded" /></code></pre></td>
+            </tr>
+          </table>
+          <h2>NavCategory</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Вкладка группы сервисов с индикатором. Дочерний компонент Sidebar.</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Нет</td>
+            </tr>
+            <tr>
+              <td rowspan="4">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">title</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">familyName</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">available</td>
+              <td>Number</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;NavCategory
+  title="Question Answering"
+  :available="qa.length"
+  familyName="qa"
+  @showModels="showModels"
+/></code></pre></td>
+            </tr>
+          </table>
+          <h2>NavLinks</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Список доступных сервисов для каждой из групп в навигации. Дочерний компонент Sidebar.</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Нет</td>
+            </tr>
+            <tr>
+              <td rowspan="3">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">name</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">services</td>
+              <td>Array</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;NavLinks name="qa" :services="qa" v-if="qa.length" /></code></pre></td>
+            </tr>
+          </table>
+          <h2>Result</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Отображение результата, присланного сервисом. Данный компонент использует <a href="https://ru.vuejs.org/v2/guide/components-slots.html" target="_blank" rel="noopener noreferrer">слоты</a>.</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Да</td>
+            </tr>
+            <tr>
+              <td rowspan="3">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">receivedData</td>
+              <td>Object</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">fileName</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;Result :receivedData="receivedData" v-if="result && !isRunning">
+  &lt;template #main>
+    {{ receivedData.translation }}
+  &lt;/template>
+  &lt;template #footer>
+    {{ receivedData.en_text }}
+  &lt;/template>
+&lt;/Result></code></pre></td>
+            </tr>
+          </table>
+          <h2>RunBtn</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Кнопка "Run" со спиннером.</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Да</td>
+            </tr>
+            <tr>
+              <td rowspan="3">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">disabled</td>
+              <td>Boolean</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">isRunning</td>
+              <td>Boolean</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;RunBtn
+  :disabled="!text.length || isRunning"
+  :isRunning="isRunning"
+  @run="sendData"
+/></code></pre></td>
+            </tr>
+          </table>
+          <h2>Sidebar</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Навигационная панель</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Нет</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;Sidebar /></code></pre></td>
+            </tr>
+          </table>
+          <h2>Slider</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Выбор значения из предоставленного интервала</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Нет</td>
+            </tr>
+            <tr>
+              <td rowspan="6">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">label</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">min</td>
+              <td>String, Number</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">max</td>
+              <td>String, Number</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">value</td>
+              <td>String, Number</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">step</td>
+              <td>String, Number</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;Slider
+  label="Choose training steps"
+  min="5000"
+  max="115000"
+  step="5000"
+  v-model="steps"
+  v-if="service.options.type == 'tggptdai'"
+/></code></pre></td>
+            </tr>
+          </table>
+          <h2>TextInput</h2>
+          <table class="component">
+            <tr>
+              <td>Описание</td>
+              <td colspan="2">Текстовый ввод с индикатором подсчета символов или слов</td>
+            </tr>
+            <tr>
+              <td>Глобальный</td>
+              <td  colspan="2">Да</td>
+            </tr>
+            <tr>
+              <td rowspan="7">Входные параметры</td>
+              <td class="col-ttl">Параметр</td>
+              <td class="col-ttl">Тип</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">placeholder</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">disabled</td>
+              <td>Boolean</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">value</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">rows</td>
+              <td>Number</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">wordcount</td>
+              <td>Number</td>
+            </tr>
+            <tr>
+              <td style="background-color: transparent; font-weight: normal; color: black;">maxlength</td>
+              <td>Number</td>
+            </tr>
+            <tr>
+              <td>Использование</td>
+              <td colspan="2"><pre><code class="language-markup">&lt;TextInput
+  placeholder="Enter text in the input field"
+  maxlength="40000"
+  :wordcount="service.options.fragmentWordLimit"
+  :rows="6"
+  :disabled="isRunning"
+  v-model="fragment"
+/></code></pre></td>
+            </tr>
+          </table>
         </section>
       </div>
     </div>
