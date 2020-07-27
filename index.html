@@ -164,7 +164,7 @@
 
       &lt;RunBtn
         :disabled="
-          isRunning || !question || !fragment /* условия отключения кнопки */
+          isRunning || !question || !fragment || !isValid /* условия отключения кнопки */
         "
         :isRunning="isRunning"
         @run="sendData"
@@ -180,8 +180,14 @@
         &lt;/template>
       &lt;/Result>
     &lt;/div>
-
-    &lt;Error :msg="receivedData.msg" v-if="error && !isRunning" />
+    
+    &lt;transition name="fade">
+      &lt;Error
+        :msg="receivedData.msg"
+        v-if="error && !isRunning"
+        @close="error = !error"
+      />
+    &lt;/transition>
   &lt;/div>
 &lt;/template></code></pre>
 
@@ -284,6 +290,7 @@
             <li><b>isRunning</b> - используется для индикации состояния приложения (по умолчанию false)</li>
             <li><b>receivedData</b> - хранит полученные от сервиса данные</li>
             <li><b>time</b> - хранит время отправки данных сервису</li>
+            <li><b>isValid</b> - используется при валидации данных</li>
           </ul>
           <h2>Вычисляемые свойста</h2>
           <ul>
@@ -297,6 +304,7 @@
           <ul>
             <li><b>sendData()</b> - отправление введенной пользователем информации сервису.</li>
             <li><b>onMessage()</b> - обработка сообщения от сокета.</li>
+            <li><b>setValid(value)</b> - присвоение параметра isValid переданному значению</li>
           </ul>
           <h2>Хук роутера</h2>
           <ul>
@@ -353,7 +361,7 @@
             </tr>
             <tr>
               <td>Использование</td>
-              <td colspan="2"><pre><code class="language-markup">&lt;Error :msg="receivedData.msg" v-if="error && !isRunning" /></code></pre></td>
+              <td colspan="2"><pre><code class="language-markup">&lt;Error :msg="receivedData.msg" v-if="error && !isRunning" @close="error = !error" /></code></pre></td>
             </tr>
           </table>
           <h2>Loader</h2>
@@ -617,13 +625,16 @@
   :rows="6"
   :disabled="isRunning"
   v-model="fragment"
+  @setValid="setValid"
 /></code></pre></td>
             </tr>
           </table>
           <h2>Сторонние компоненты и плагины</h2>
-          <a href="https://www.npmjs.com/package/vue-page-title" target="_blank" rel="noopener noreferrer">vue-page-title</a> - генерация заголовка страницы
-          <a href="https://vue-select.org/" target="_blank" rel="noopener noreferrer">vue-select</a> - компонент выбора опции из списка
-          <a href="https://github.com/highcharts/highcharts-vue" target="_blank" rel="noopener noreferrer">highcharts-vue</a> - компонент-график
+          <ul>
+            <li><a href="https://www.npmjs.com/package/vue-page-title" target="_blank" rel="noopener noreferrer">vue-page-title</a> - генерация заголовка страницы</li>
+            <li><a href="https://vue-select.org/" target="_blank" rel="noopener noreferrer">vue-select</a> - компонент выбора опции из списка</li>
+            <li><a href="https://github.com/highcharts/highcharts-vue" target="_blank" rel="noopener noreferrer">highcharts-vue</a> - компонент-график</li>
+          </ul>
         </section>
       </div>
     </div>
